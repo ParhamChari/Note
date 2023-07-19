@@ -1,4 +1,4 @@
-package com.example.note
+package com.example.note.ui.view.fragments
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment
@@ -6,7 +6,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.navigation.fragment.findNavController
-import com.example.note.databinding.FragmentHomeBinding
+import com.example.note.R
 import com.example.note.databinding.FragmentUpdateBinding
 
 class UpdateFragment : Fragment() {
@@ -15,7 +15,7 @@ class UpdateFragment : Fragment() {
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
+    ): View {
         // Inflate the layout for this fragment
         binding = FragmentUpdateBinding.inflate(inflater,container,false)
 

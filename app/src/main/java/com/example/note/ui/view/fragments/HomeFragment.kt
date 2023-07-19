@@ -1,4 +1,4 @@
-package com.example.note
+package com.example.note.ui.view.fragments
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment
@@ -6,22 +6,22 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.navigation.fragment.findNavController
-import com.example.note.databinding.FragmentAddBinding
+import com.example.note.R
 import com.example.note.databinding.FragmentHomeBinding
 
-class AddFragment : Fragment() {
-
-    lateinit var binding: FragmentAddBinding
+class HomeFragment : Fragment() {
+    lateinit var binding: FragmentHomeBinding
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
+    ): View {
         // Inflate the layout for this fragment
-        binding = FragmentAddBinding.inflate(inflater,container,false)
+        binding = FragmentHomeBinding.inflate(inflater,container,false)
 
-        binding.btnAddNote.setOnClickListener{
-            findNavController().navigate(R.id.action_addFragment_to_homeFragment)
+        binding.btnAdd.setOnClickListener{
+            findNavController().navigate(R.id.action_homeFragment_to_addFragment)
         }
+
 
         return binding.root
     }

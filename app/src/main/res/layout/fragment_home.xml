@@ -4,21 +4,33 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".HomeFragment">
+    tools:context=".ui.view.fragments.HomeFragment">
 
     <EditText
         android:id="@+id/search"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="@dimen/_2sdp"
+        android:layout_margin="@dimen/_8sdp"
         android:background="@drawable/search_background"
         android:hint="Search..."
-        android:padding="@dimen/_12sdp"
-        android:textColor="#FBFBFB"
-        android:textColorHint="#FBFBFB"
-        android:textSize="@dimen/_15ssp"
-        app:layout_constraintStart_toStartOf="parent"
+        android:paddingTop="@dimen/_10sdp"
+        android:paddingBottom="@dimen/_12sdp"
+        android:paddingStart="@dimen/_30sdp"
+        android:textColor="@color/white"
+        android:textColorHint="#E4E4E4"
+        android:textSize="@dimen/_16ssp"
+        app:layout_constraintStart_toEndOf="@id/searchIcon"
         app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/searchIcon"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/baseline_search"
+        android:layout_marginStart="@dimen/_6sdp"
+        app:layout_constraintBottom_toBottomOf="@id/search"
+        app:layout_constraintStart_toStartOf="@id/search"
+        app:layout_constraintTop_toTopOf="@id/search" />
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recyclerview"
@@ -31,16 +43,16 @@
 
     <com.google.android.material.button.MaterialButton
         android:id="@+id/btnAdd"
-        android:layout_width="@dimen/_46sdp"
+        android:layout_width="@dimen/_47sdp"
         android:layout_height="@dimen/_46sdp"
-        android:layout_marginEnd="@dimen/_8sdp"
-        android:layout_marginBottom="@dimen/_17sdp"
+        android:layout_marginEnd="@dimen/_10sdp"
+        android:layout_marginBottom="@dimen/_41sdp"
         android:background="@drawable/button_style"
-        app:icon="@drawable/plus"
-        app:iconTint="#FFFFFF"
-        app:iconGravity="end"
         android:text=""
-        app:backgroundTint="#039D9C"
+        app:backgroundTint="#FF0000"
+        app:icon="@drawable/plus"
+        app:iconGravity="end"
+        app:iconTint="#FFFFFF"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent" />
 
