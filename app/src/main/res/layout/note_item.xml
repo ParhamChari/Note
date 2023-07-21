@@ -19,8 +19,8 @@
             android:layout_height="wrap_content"
             android:layout_margin="@dimen/_7sdp"
             android:text="Title"
-            android:textAppearance="@style/TextAppearance.AppCompat.Title"
-            android:textSize="@dimen/_20ssp"
+            android:textColor="@color/teal_700"
+            android:textSize="@dimen/_21ssp"
             android:textStyle="bold"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
@@ -31,24 +31,20 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="@dimen/_13sdp"
             android:text="Description"
-            android:textAppearance="@style/TextAppearance.AppCompat.Caption"
-            android:textSize="@dimen/_17ssp"
+            android:textSize="@dimen/_16ssp"
+            android:textStyle="bold"
             app:layout_constraintStart_toStartOf="@id/title"
             app:layout_constraintTop_toBottomOf="@id/title" />
 
-        <com.google.android.material.button.MaterialButton
-            android:id="@+id/editIcon"
-            android:layout_width="@dimen/_42sdp"
-            android:layout_height="@dimen/_45sdp"
-            android:layout_margin="@dimen/_8sdp"
-            android:text=""
-            android:backgroundTint="@color/white"
-            app:cornerRadius="@dimen/_5sdp"
-            app:icon="@drawable/edit"
-            app:iconGravity="textEnd"
-            app:iconTint="#039D9C"
+        <ImageView
+            android:id="@+id/dialog"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/_9sdp"
+            android:src="@drawable/baseline_more"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
+
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
