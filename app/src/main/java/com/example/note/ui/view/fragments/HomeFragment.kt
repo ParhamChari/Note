@@ -23,6 +23,7 @@ class HomeFragment : Fragment() {
         }
 
 
+
         return binding.root
     }
 
