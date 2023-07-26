@@ -7,7 +7,6 @@ plugins {
 }
 
 android {
-    namespace 'com.example.note'
     compileSdk 33
 
     defaultConfig {

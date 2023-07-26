@@ -8,7 +8,7 @@ import kotlinx.parcelize.Parcelize
 @Entity(tableName = "note_table")
 @Parcelize
 data class NoteModel(
-    @PrimaryKey(autoGenerate = true) private val id: Int? = null,
-    private val title: String,
-    private val description: String
+    @PrimaryKey(autoGenerate = true) val id: Int? = null,
+    val title: String,
+    val description: String
 ) :Parcelable
