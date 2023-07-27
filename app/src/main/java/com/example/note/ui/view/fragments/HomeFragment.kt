@@ -6,7 +6,11 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.lifecycle.LiveData
+import androidx.lifecycle.Observer
 import androidx.navigation.fragment.findNavController
+import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.RecyclerView
 import com.example.note.R
 import com.example.note.data.model.NoteModel
 import com.example.note.databinding.FragmentHomeBinding
@@ -23,25 +27,27 @@ class HomeFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View {
         // Inflate the layout for this fragment
-        binding = FragmentHomeBinding.inflate(inflater,container,false)
+        binding = FragmentHomeBinding.inflate(inflater, container, false)
         return binding.root
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         noteViewModel = (activity as MainActivity).noteViewModel
-        binding.btnAdd.setOnClickListener{
+        binding.btnAdd.setOnClickListener {
             findNavController().navigate(R.id.action_homeFragment_to_addFragment)
         }
+
         noteAdapter = NoteAdapter()
+        activity?.let {
+            noteViewModel.getAllNotes().observe(viewLifecycleOwner) {
+                noteAdapter.differ.submitList(it)
+            }
+        }
         binding.recyclerview.apply {
+            layoutManager = LinearLayoutManager(activity, LinearLayoutManager.VERTICAL, false)
             setHasFixedSize(true)
             adapter = noteAdapter
-        }
-        activity?.let {
-            noteViewModel.getAllNotes().observe(viewLifecycleOwner) {note->
-                noteAdapter.differ.submitList(note)
-            }
         }
 
     }

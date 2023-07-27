@@ -6,6 +6,7 @@ import androidx.lifecycle.ViewModelProvider
 import com.example.note.data.Repository.NoteRepository
 import com.example.note.ui.viewmodel.NoteViewModel
 
+@Suppress("UNCHECKED_CAST")
 class NoteViewModelFactory(val app: Application, private val repository: NoteRepository) :
     ViewModelProvider.Factory {
 
