@@ -1,11 +1,15 @@
 package com.example.note.ui.view.fragments
 
+import android.app.AlertDialog
 import android.os.Bundle
+import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
+import android.view.MenuItem
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
+import androidx.appcompat.widget.PopupMenu
 import androidx.navigation.fragment.findNavController
 import androidx.navigation.fragment.navArgs
 import com.example.note.R
@@ -27,6 +31,35 @@ class UpdateFragment : Fragment() {
     ): View {
         // Inflate the layout for this fragment
         binding = FragmentUpdateBinding.inflate(inflater,container,false)
+
+        binding.options.setOnClickListener { view ->
+            val popupMenu = PopupMenu(binding.options.context, view)
+            popupMenu.setOnMenuItemClickListener {
+                when (it.itemId) {
+
+                    R.id.menu_delete -> {
+                        deleteNote()
+                        true
+                    }
+
+                    else -> true
+                }
+            }
+            popupMenu.inflate(R.menu.menu_main)
+
+            try {
+                val fieldMPopup = PopupMenu::class.java.getDeclaredField("mPopup")
+                fieldMPopup.isAccessible = true
+                val mPopup = fieldMPopup.get(popupMenu)
+                mPopup.javaClass
+                    .getDeclaredMethod("setForceShowIcon", Boolean::class.java)
+                    .invoke(mPopup)
+            } catch (e: Exception) {
+                Log.e("Main", "Error showing menu icons.", e)
+            } finally {
+                popupMenu.show()
+            }
+        }
         return binding.root
     }
 
@@ -56,6 +89,18 @@ class UpdateFragment : Fragment() {
         } else {
             Toast.makeText(requireContext(), "لطفا اطلاعات را وارد کنید", Toast.LENGTH_SHORT).show()
         }
+    }
+
+    fun deleteNote() {
+        AlertDialog.Builder(activity).apply {
+            setTitle("حذف نام")
+            setMessage("ایا از حذف این پرونده مطمعن هستید ؟")
+            setPositiveButton("بله") { _, _ ->
+                noteViewModel.deleteNote(currentNote)
+                findNavController().navigate(R.id.action_updateFragment_to_homeFragment)
+            }
+            setNegativeButton("خیر", null)
+        }.create().show()
     }
 
 }
