@@ -4,6 +4,7 @@ import android.app.Application
 import androidx.lifecycle.AndroidViewModel
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.viewModelScope
+import androidx.room.Query
 import com.example.note.data.Repository.NoteRepository
 import com.example.note.data.model.NoteModel
 import kotlinx.coroutines.launch
@@ -26,4 +27,5 @@ class NoteViewModel(app: Application, private val repository: NoteRepository) :
     fun getAllNotes(): LiveData<List<NoteModel>> {
         return repository.getAllNotes()
     }
+    fun searchNotes(query: String?) = repository.searchNotes(query)
 }

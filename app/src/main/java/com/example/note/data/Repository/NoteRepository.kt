@@ -13,4 +13,5 @@ class NoteRepository(private val noteDatabase: NoteDatabase) {
     fun getAllNotes(): LiveData<List<NoteModel>> {
         return noteDatabase.getNoteDao().getAllNotes()
     }
+    fun searchNotes(query : String?) = noteDatabase.getNoteDao().searchNotes(query)
 }
