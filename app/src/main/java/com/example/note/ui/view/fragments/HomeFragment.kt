@@ -39,9 +39,9 @@ class HomeFragment : Fragment() {
         // Inflate the layout for this fragment
         binding = FragmentHomeBinding.inflate(inflater, container, false)
         val edtSearch = binding.search
-        val backSpace = binding.backSpace
+        val clear = binding.clearIcon
 
-        backSpace.setOnClickListener {
+        clear.setOnClickListener {
             edtSearch.setText("")
         }
 
@@ -59,9 +59,9 @@ class HomeFragment : Fragment() {
                 searchNote(s.toString())
 
                 if (edtSearch.text.isEmpty()) {
-                    backSpace.visibility = View.INVISIBLE
+                    clear.visibility = View.INVISIBLE
                 } else {
-                    backSpace.visibility = View.VISIBLE
+                    clear.visibility = View.VISIBLE
                 }
             }
 

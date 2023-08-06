@@ -22,6 +22,7 @@
             android:layout_margin="@dimen/_7sdp"
             android:text="Title"
             android:textColor="@color/teal_700"
+            android:maxLength="26"
             android:textSize="@dimen/_21ssp"
             android:textStyle="bold"
             app:layout_constraintStart_toStartOf="parent"
@@ -34,6 +35,7 @@
             android:layout_marginTop="@dimen/_13sdp"
             android:text="Description"
             android:textSize="@dimen/_15ssp"
+            android:maxLength="41"
             android:textStyle="bold"
             app:layout_constraintStart_toStartOf="@id/title"
             app:layout_constraintTop_toBottomOf="@id/title" />

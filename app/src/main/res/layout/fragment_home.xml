@@ -29,11 +29,12 @@
                 android:layout_height="match_parent"
                 android:backgroundTint="@color/white"
                 android:hint="Search..."
+                android:maxLength="23"
                 android:paddingStart="@dimen/_30sdp"
                 android:paddingTop="@dimen/_10sdp"
                 android:paddingBottom="@dimen/_10sdp"
                 android:textColor="@color/black"
-                android:textSize="@dimen/_17ssp"
+                android:textSize="@dimen/_15ssp"
                 app:layout_constraintStart_toEndOf="@id/searchIcon"
                 app:layout_constraintTop_toTopOf="parent" />
 
@@ -48,11 +49,11 @@
                 app:layout_constraintTop_toTopOf="@id/search" />
 
             <ImageView
-                android:id="@+id/backSpace"
+                android:id="@+id/clearIcon"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginEnd="@dimen/_9sdp"
-                android:src="@drawable/round_backspace"
+                android:layout_marginEnd="@dimen/_5sdp"
+                android:src="@drawable/multiply"
                 android:visibility="invisible"
                 app:layout_constraintBottom_toBottomOf="@id/search"
                 app:layout_constraintEnd_toEndOf="parent"
@@ -66,11 +67,11 @@
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_marginTop="@dimen/_11sdp"
-        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
         android:orientation="vertical"
+        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/searchParent"
-        app:layout_constraintBottom_toBottomOf="parent"
         tools:listitem="@layout/note_item" />
 
     <com.google.android.material.button.MaterialButton
