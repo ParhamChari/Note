@@ -100,6 +100,8 @@ class UpdateFragment : Fragment() {
                 findNavController().navigate(R.id.action_updateFragment_to_homeFragment)
             }
             setNegativeButton("خیر", null)
+            setCancelable(false)
+
         }.create().show()
     }
 
