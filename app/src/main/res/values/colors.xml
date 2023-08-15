@@ -7,6 +7,6 @@
     <color name="teal_700">#FF018786</color>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
-    <color name="error_color">#CD0F0F</color>
-    <color name="success_color">#167e1e</color>
+    <color name="error_color">#D11616</color>
+    <color name="success_color">#28a745</color>
 </resources>
