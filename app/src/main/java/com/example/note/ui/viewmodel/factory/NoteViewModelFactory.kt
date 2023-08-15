@@ -3,7 +3,7 @@ package com.example.note.ui.viewmodel.factory
 import android.app.Application
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
-import com.example.note.data.Repository.NoteRepository
+import com.example.note.data.repository.NoteRepository
 import com.example.note.ui.viewmodel.NoteViewModel
 
 @Suppress("UNCHECKED_CAST")
